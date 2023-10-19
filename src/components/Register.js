@@ -27,6 +27,10 @@ function Register(props) {
                 props.isOpen('ok', 'ok');
                 navigate('/signin', {replace: true});
             })
+            .catch((err) => {
+                console.log(err);
+                props.isOpen('not', 'not')
+            })
     }
 
     const headerLink = 'Войти';

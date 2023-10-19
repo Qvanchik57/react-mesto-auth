@@ -27,12 +27,12 @@ function Login({handleLogin, ...props}) {
         }
         auth.authorize(formValue.password, formValue.email)
             .then((data) => {
+                console.log(data)
                 if (data.token) {
                     setFormValue({email: '', password: ''});
                     handleLogin();
                     navigate('/', {replace: true});
                 }
-                else props.isOpen('not', 'not')
             })
             .catch((err) => {
                 console.log(err);
